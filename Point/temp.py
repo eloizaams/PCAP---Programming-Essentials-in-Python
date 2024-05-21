@@ -1,15 +1,9 @@
-from os import strerror
+import os
 
-data = bytearray(10)
-
-try:
-    bf = open('file.bin', 'rb')
-    bf.readinto(data)
-    bf.close()
-
-    for b in data:
-        print(hex(b), end=' ')
-except IOError as e:
-    print("I/O error occurred:", strerror(e.errno))
+os.makedirs("my_first_directory/my_second_directory")
+os.chdir("my_first_directory")
+print(os.getcwd())
+os.chdir("my_second_directory")
+print(os.getcwd())
 
 

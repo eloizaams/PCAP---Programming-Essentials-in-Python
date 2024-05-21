@@ -13,6 +13,8 @@ except FileNotFoundError:
     print("Erro ao abrir o arquivo.")
     exit()
 
-for key, value in char_dict.items():
+char_dict_order = dict(sorted(char_dict.items(), key=lambda item: item[1], reverse=True))
+
+for key, value in char_dict_order.items():
     if value > 0:
         print(key, " -> ", value)
